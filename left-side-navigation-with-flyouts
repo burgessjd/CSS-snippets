@@ -1,0 +1,132 @@
+/* begin custom vertical left-side navigation with flyouts */
+
+ul.flyout {
+	margin:0;
+	padding:0;
+	width:100%;
+	list-style-type: none;
+
+}
+
+.flyout > li {
+	display:block;
+	width:100%;
+}
+
+.flyout > li > a {
+	display: block;
+	margin: 0;
+	padding: 3% 7% 3% 3%; /*top,right,bottom,left - extra right padding prevents link text overlapping arrow image*/ 
+	color: #FFFFFF;
+	text-decoration: none;
+	border-bottom: 1px solid #dddddd;
+	background-color:#7e7e9c; /* matches color of wrapping div background */ 
+	
+}
+
+.flyout > li > a:hover {
+	color: #FFFFFF; 
+	background-color:#333333; 
+}
+
+a.arrow {
+	background: url(../img/arrow-right.gif); /* image size W5px, H9px */
+	background-repeat: no-repeat;
+	background-position: 98% center; /*  moves arrow a little bit back off the border */		
+}
+
+
+li.sub {
+ position: relative;
+}
+
+.sub ul {
+	margin:0;
+	padding:0;
+	width:100%;
+	list-style-type: none;
+}
+
+.sub ul {
+	margin: +3% 0 0 0%; /* positioning of flyout links */
+	padding:0;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	filter: alpha(opacity=95); /* for IE */
+  	opacity: 0.95; /* CSS3 standard */
+  	color:#ffffff;
+  	background-color:#333333;
+  	border-top: 1px solid #dddddd; 
+	display: none;
+	z-index:2;/* ensures that the menu links are in the topmost layer  */  
+		
+}
+
+.sub ul a {
+	display: block;
+	margin: 0;
+	padding: 3%; /* removes extra right padding in flyouts */ 
+	color: #dddddd;
+	text-decoration: none;
+	border-bottom: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
+	
+}
+
+.sub ul a:hover {
+
+	color:#ffffff;
+}
+
+
+.sub:hover ul {
+	     display:block; 
+}
+
+
+
+
+
+// begin HTML
+
+
+
+
+
+<ul class="nav flyout">
+
+<li><a href="index.php?pg=home">Project Home</a></li>
+<li class="sub"><a href="index.php?pg=landing" class="arrow">Landing Page</a>
+<ul>
+        <li><a href="index.php?pg=first">Landing Page Flyout One</a></li>
+        <li><a href="index.php?pg=second">Landing Page Flyout Two</a></li>
+</ul>
+    </li>
+
+ <li class="sub"><a href="index.php?pg=faqs" class="arrow">FAQs</a>
+    <ul>   
+        <li><a href="index.php?pg=first">FAQs Flyout One</a></li>
+        <li><a href="index.php?pg=second">FAQS Flyout Two</a></li>
+        <li><a href="index.php?pg=third">FAQS Flyout Three</a></li>
+        </ul>
+    </li>
+
+  <li class="sub"><a href="index.php?pg=tabs" class="arrow">Tabs</a>
+       <ul>   
+        <li><a href="index.php?pg=first">Tabs Flyout One</a></li>
+        <li><a href="index.php?pg=second">Tabs Flyout Two</a></li>
+        <li><a href="index.php?pg=third">Tabs Flyout Three</a></li>
+        </ul>
+    </li>
+
+    <li class="sub"><a href="index.php?pg=tables" class="arrow">Tables</a>
+       <ul>   
+        <li><a href="index.php?pg=first">Tables Flyout One</a></li>
+        <li><a href="index.php?pg=second">Tables Flyout Two</a></li>
+        </ul>
+    </li>
+
+  </ul>
